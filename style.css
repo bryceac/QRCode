@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/* this stylesheet is responsible for making the QR code only when page is printed */
+@media screen
+{
+	.QR {
+			display:none;
+		}
+}
+
+/* the following displays links in QR div. If your theme's stylesheet provides this functionality posts, these rules are not necessary */
+@media print
+{
+	.QR a:link:after, .QR a:visited:after {
+										content: " (" attr(href) ")";
+									}
+}
