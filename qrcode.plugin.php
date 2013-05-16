@@ -29,15 +29,31 @@ class QRCode extends Plugin
 	// function used to add things to header
 	public function theme_header()
 	{
-		Stack::add('template_stylesheet', array($this->get_url() . '/style.css', 'screen'));
+		// Stack::add('template_stylesheet', $this->get_url() . '/style.css');
+	}
+	
+	// function used to add the necessary Javascript to footer
+	public function theme_footer()
+	{
+		Stack::add('template_footer_javascript', Site::get_url('scripts') . '/jquery.js', 'jquery');
+		Stack::add('template_footer_javascript', $this->get_url() . '/jquery-qrcode/jquery.qrcode.min.js');
+		Stack::add('template_footer_javascript', $this->get_url() . '/jquery-qrcode/src/qrcode.js');
+	}
+	
+	// function to hold QR Javascript
+	private function qrscript($post)
+	{
+		$script = 'jQuery(\'#qrcode\').qrcode({ width: 150, height: 150, text: "' . $post->permalink . '"});';
+		return $script;
 	}
 	
 	// the following creates a div container that holds the code to display a QR Code
 	private function create_code($post)
 	{
 		$code = '<div class="QR">';
-		$code .= '<div style="content:url(https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=' . $post->permalink . '&choe=UTF-8)"></div>';
+		$code .= '<div id="qrcode"></div>';
 		$code .= '<p>Use an app on your on phone (e.g. <a href="https://play.google.com/store/apps/details?id=me.scan.android.client&hl=en">Scan</a> for Android) to capture the image above. If successful, you should be taken the web version of this article.</p></div>';
+		Stack::add('template_footer_javascript', $this->qrscript($post)); /* this code is in the function because footer function will not recognize post variable, no matter how I went about it */
 		return $code;
 	}
 }
