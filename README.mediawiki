@@ -34,3 +34,7 @@ This plugin has been tested with version 0.9 of Habari.
 This plugin is not configurable through the Habari admin, but if you know PHP, one should be able to insert any kind of Quick Response code they desire.
 
 The CSS file only determines whether or not it is shown in web browsers, in addition to the print medium. The main PHP file is what holds the source for the QR code, using an inline style.
+
+=== jQuery QR code ===
+
+As of version 0.2, this plugin utilizes Jerome Etienne's [https://github.com/jeromeetienne/jquery-qrcode jquery.qrcode.js], which is also licensed under the MIT License.
