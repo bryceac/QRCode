@@ -1,10 +1,17 @@
 = QR Code =
-'''Version:''' 0.1
+'''Version:''' 0.2
 '''Copyright:''' 2013 Bryce Campbell
 
 ==Description== 
 
 This plugin places a QR Code at the bottom of posts, when they are printed, which can be used by smart phone users.
+
+== Version History ==
+
+<dl>
+<dt style="font-weight:bold">0.1</dt><dd>Initial Release</dd>
+<dt style="font-weight:bold">0.2</dt><dd>Change QR generator to use JQuery, so that it does not rely on Google Chart API. Released 5/15/2013 9:24 P.S.T.</dd>
+</dl>
 
 == Support ==
 
