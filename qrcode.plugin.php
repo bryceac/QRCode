@@ -35,7 +35,10 @@ class QRCode extends Plugin
 	// function used to add the necessary Javascript to footer
 	public function theme_footer()
 	{
-		Stack::add('template_footer_javascript', Site::get_url('scripts') . '/jquery.js', 'jquery');
+		if (!Stack::has('template_header_javascript', 'jquery'))
+		{
+			Stack::add('template_footer_javascript', Site::get_url('scripts') . '/jquery.js', 'jquery');
+		} else;
 		Stack::add('template_footer_javascript', $this->get_url() . '/jquery-qrcode/jquery.qrcode.min.js', 'jquery-qrcode');
 	}
 	
@@ -51,7 +54,7 @@ class QRCode extends Plugin
 	{
 		$code = '<div class="QR">';
 		$code .= '<div id="qrcode"></div>';
-		$code .= '<p>Use an app on your on phone (e.g. <a href="https://play.google.com/store/apps/details?id=me.scan.android.client&hl=en">Scan</a> for Android) to capture the image above. If successful, you should be taken to the web version of this article.</p></div>';
+		$code .= '<p>Use an app on your phone (e.g. <a href="https://play.google.com/store/apps/details?id=me.scan.android.client&hl=en">Scan</a> for Android) to capture the image above. If successful, you should be taken to the web version of this article.</p></div>';
 		Stack::add('template_footer_javascript', array($this->qrscript($post), 'type="text/javascript"'), 'qcode', array('jquery', 'jquery-qrcode')); /* this code is in the function because footer function will not recognize post variable, no matter how I went about it */
 		return $code;
 	}
