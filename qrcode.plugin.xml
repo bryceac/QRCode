@@ -15,7 +15,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <name>QRCode</name>
 <license url="http://opensource.org/licenses/MIT">MIT License</license>
 <author url="http://blog.brycecampbell.me">Bryce C.</author>
-<version>0.2</version>
+<version>0.3</version>
     <description>This plugin places a QR code to the bottom of posts, upon printing.</description>
 <copyright>2013</copyright>
 <guid>fef03538-e085-4440-b955-dec6142cb6d3</guid>
