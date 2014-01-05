@@ -11,7 +11,7 @@ This plugin places a QR Code at the bottom of posts, when they are printed, whic
 <dl>
 <dt style="font-weight:bold">0.1</dt><dd>Initial Release</dd>
 <dt style="font-weight:bold">0.2</dt><dd>Change QR generator to use JQuery, so that it does not rely on Google Chart API. Released 5/15/2013 9:24 P.S.T.</dd>
-<dt style="font-weight:bold">0.3</dt><dd>Add support for Habari 0.10. released 6/7/2013</dd>
+<dt style="font-weight:bold">0.3</dt><dd>Add support for Habari 0.10. <strong>(Is not compatible with Habari 0.9.x)</strong> released 6/7/2013</dd>
 </dl>
 
 == Support ==
